@@ -1,7 +1,5 @@
-import io.github.rafaeljpc.study.algorithms.IntArrayHeapSort
-import io.github.rafaeljpc.study.algorithms.IntArrayMergeSort
-import io.github.rafaeljpc.study.algorithms.IntArrayQuickSort
-import io.github.rafaeljpc.study.algorithms.IntArraySortInterface
+package io.github.rafaeljpc.study.algorithms.sort
+
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
@@ -17,17 +15,16 @@ class SortIntArrayTest {
         private val sortedArrayInverse = inputArrayInverse.sorted().toIntArray()
         private val sortedArrayEmpty = inputArrayEmpty.sorted().toIntArray()
 
-        private val defaultSortFunction = object : IntArraySortInterface {
-            override fun sort(input: IntArray): IntArray {
-                return input.sorted().toIntArray()
+        private val defaultSortFunction =
+            object : IntArraySortInterface {
+                override fun sort(input: IntArray): IntArray {
+                    return input.sorted().toIntArray()
+                }
+
+                override fun toString(): String {
+                    return "DefaultJVMSort"
+                }
             }
-
-            override fun toString(): String {
-                return "DefaultJVMSort"
-            }
-
-
-        }
 
         @JvmStatic
         private fun provideData() =
@@ -35,16 +32,12 @@ class SortIntArrayTest {
                 Arguments.of(defaultSortFunction, inputArray, sortedArray),
                 Arguments.of(defaultSortFunction, inputArrayInverse, sortedArrayInverse),
                 Arguments.of(defaultSortFunction, inputArrayEmpty, sortedArrayEmpty),
-
                 Arguments.of(IntArrayQuickSort, inputArray, sortedArray),
                 Arguments.of(IntArrayQuickSort, inputArrayInverse, sortedArrayInverse),
                 Arguments.of(IntArrayQuickSort, inputArrayEmpty, sortedArrayEmpty),
-
                 Arguments.of(IntArrayMergeSort, inputArray, sortedArray),
                 Arguments.of(IntArrayMergeSort, inputArrayInverse, sortedArrayInverse),
                 Arguments.of(IntArrayMergeSort, inputArrayEmpty, sortedArrayEmpty),
-
-
                 Arguments.of(IntArrayHeapSort, inputArray, sortedArray),
                 Arguments.of(IntArrayHeapSort, inputArrayInverse, sortedArrayInverse),
                 Arguments.of(IntArrayHeapSort, inputArrayEmpty, sortedArrayEmpty),
@@ -62,9 +55,6 @@ class SortIntArrayTest {
         // Given
         val result = sortFunction.sort(input)
         // Then
-        assertThat(result)
-            .isEqualTo(expected)
-            .containsExactlyInAnyOrder(input.toTypedArray())
-
+        assertThat(result).isEqualTo(expected).containsExactlyInAnyOrder(input.toTypedArray())
     }
 }
