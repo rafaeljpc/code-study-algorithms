@@ -12,17 +12,17 @@ class MinimumPlatformsRequiredTest {
             Arguments.of(
                 intArrayOf(900, 940, 950, 1100, 1500, 1800),
                 intArrayOf(910, 1200, 1120, 1130, 1900, 2000),
-                3
+                3,
             ),
             Arguments.of(
                 intArrayOf(900, 940),
                 intArrayOf(910, 1200),
-                1
+                1,
             ),
             Arguments.of(
                 intArrayOf(100, 300, 500),
                 intArrayOf(900, 400, 600),
-                2
+                2,
             ),
         )
     }

@@ -20,5 +20,4 @@ object EquilibriumIndex {
 
         return -1
     }
-
 }

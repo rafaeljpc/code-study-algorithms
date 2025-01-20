@@ -23,5 +23,4 @@ class EquilibriumIndexTest {
         val result = EquilibriumIndex.findEquilibriumIndex(input)
         assertThat(result).isEqualTo(expected)
     }
-
 }

@@ -16,7 +16,7 @@ class MaximumProductSubArrayTest {
             Arguments.of(intArrayOf(-2, 0, -1), 0),
             Arguments.of(intArrayOf(0, 2), 2),
             Arguments.of(intArrayOf(-2, -3, -4), 12),
-            Arguments.of(intArrayOf(2, 3, 4, 5, -20, 3, 4, 5, 6), 360)
+            Arguments.of(intArrayOf(2, 3, 4, 5, -20, 3, 4, 5, 6), 360),
         )
     }
 
