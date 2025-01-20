@@ -51,10 +51,7 @@ class SortIntArrayTest {
         input: IntArray,
         expected: IntArray,
     ) {
-        // When
-        // Given
         val result = sortFunction.sort(input)
-        // Then
         assertThat(result).isEqualTo(expected).containsExactlyInAnyOrder(input.toTypedArray())
     }
 }

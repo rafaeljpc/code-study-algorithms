@@ -1,9 +1,5 @@
 package io.github.rafaeljpc.study.algorithms.array
 
-import io.github.oshai.kotlinlogging.KotlinLogging
-
-val log = KotlinLogging.logger { }
-
 object TrappingWater {
 
     fun maxWater(heights: IntArray): Int {
