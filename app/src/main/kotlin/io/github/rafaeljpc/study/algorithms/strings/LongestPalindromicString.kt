@@ -27,5 +27,4 @@ object LongestPalindromicString {
 
         return input.substring(start, start + maxLength)
     }
-
 }

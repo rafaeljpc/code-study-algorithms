@@ -35,7 +35,7 @@ class WildcardPatternMatchingTest {
         solver: WildcardPatternMatchingInterface,
         text: String,
         pattern: String,
-        expected: Boolean
+        expected: Boolean,
     ) {
         val result = solver.isMatch(text, pattern)
         assertThat(result).isEqualTo(expected)
