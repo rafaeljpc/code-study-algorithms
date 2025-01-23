@@ -11,10 +11,21 @@ class WildcardPatternMatchingTest {
         fun provideTestData() = listOf(
             Arguments.of(WildcardPatternMatchingRecursion, "abcde", "a?c*", true),
             Arguments.of(WildcardPatternMatchingRecursion, "baaabab", "a*ab", false),
+            Arguments.of(WildcardPatternMatchingRecursion, "baaabab", "*****ba*****ab", true),
+            Arguments.of(WildcardPatternMatchingRecursion, "baaabab", "*****ba*****jab", false),
             Arguments.of(WildcardPatternMatchingRecursion, "abc", "a?c", true),
             Arguments.of(WildcardPatternMatchingRecursion, "azc", "a?c", true),
             Arguments.of(WildcardPatternMatchingRecursion, "auc", "a?c", true),
             Arguments.of(WildcardPatternMatchingRecursion, "abc", "*", true),
+
+            Arguments.of(WildcardPatternMatchingSimpleTraversalSolution, "abcde", "a?c*", true),
+            Arguments.of(WildcardPatternMatchingSimpleTraversalSolution, "baaabab", "a*ab", false),
+            Arguments.of(WildcardPatternMatchingSimpleTraversalSolution, "baaabab", "*****ba*****ab", true),
+            Arguments.of(WildcardPatternMatchingSimpleTraversalSolution, "baaabab", "*****ba*****jab", false),
+            Arguments.of(WildcardPatternMatchingSimpleTraversalSolution, "abc", "a?c", true),
+            Arguments.of(WildcardPatternMatchingSimpleTraversalSolution, "azc", "a?c", true),
+            Arguments.of(WildcardPatternMatchingSimpleTraversalSolution, "auc", "a?c", true),
+            Arguments.of(WildcardPatternMatchingSimpleTraversalSolution, "abc", "*", true),
         )
     }
 
