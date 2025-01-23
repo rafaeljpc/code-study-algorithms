@@ -58,7 +58,7 @@ class GraphDepthFirstSearchTest {
 
         log.debug { "graph=$graph" }
 
-        val result = graph.allNodes()
+        val result = graph.allNodesDFS()
         assertThat(result)
             .containsExactlyInAnyOrderElementsOf(expectedResult.asList())
     }
