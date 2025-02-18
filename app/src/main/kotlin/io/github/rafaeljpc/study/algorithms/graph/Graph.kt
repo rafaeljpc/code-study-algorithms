@@ -6,6 +6,7 @@ import io.github.oshai.kotlinlogging.KotlinLogging
 abstract class Graph(
     protected val graphSize: Int,
     edges: Array<IntArray> = emptyArray(),
+    protected val directed: Boolean = true
 ) {
 
     companion object {
@@ -26,6 +27,9 @@ abstract class Graph(
     fun addEdges(edges: Array<IntArray>) {
         for (edge in edges) {
             addEdge(edge[0], edge[1])
+            if (!directed) {
+                addEdge(edge[1], edge[0])
+            }
         }
     }
 
